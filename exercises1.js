@@ -212,7 +212,22 @@ console.log("\nEjercicio 12: Bucle while (factorial)");
 
 function factorial(n) {
 
-  
+  if (n<0){
+    return "El número debe ser positivo."
+  }
+
+  if (n===0 || n===1){
+    return 1;
+  }
+
+  let resultado=1;
+
+  while(n>1){
+    resultado=resultado*n;
+    n--;
+  }
+
+  return resultado
 
 }
 
@@ -223,15 +238,20 @@ console.log(factorial(5)); // Debería mostrar: 120
 // ------------------------------
 
 console.log("\nEjercicio 13: forEach básico");
+
 // Utiliza forEach para imprimir cada número del array 'numeros' al cuadrado
 // Datos de prueba:
+
 const numeros = [1, 2, 3, 4, 5];
 numeros.forEach(n => console.log(n*n));
+
 // Debería imprimir: 1 4 9 16 25
 
 console.log("\nEjercicio 14: forEach con índice");
+
 // Utiliza forEach para imprimir cada nombre del array 'nombres' con su índice
 // Datos de prueba:
+
 const nombres = ['Ana', 'Juan', 'María'];
 nombres.forEach((nombre,i) => console.log(`Nombre en índice ${i}: ${nombre}`));
 // Debería imprimir:
@@ -252,9 +272,13 @@ empleados.forEach(e => console.log(`${e.nombre} gana ${e.salario} euros`));
 // Eva gana 1500 euros
 
 console.log("\nEjercicio 16: map básico");
+
 // Utiliza map para crear un nuevo array con el cubo de cada número del array 'numeros'
 // Datos de prueba:
+
+const cubos = numeros.map(n => n**3)
 console.log(cubos);
+
 // Debería mostrar: [1, 8, 27, 64, 125]
 
 console.log("\nEjercicio 17: map con strings");
